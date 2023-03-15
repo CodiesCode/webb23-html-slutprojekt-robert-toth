@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"/>
+        <title>Robert Toth - Filmtrailer</title>
+    </head>
+        <body>
+            <main>
+                <nav class="topnav" id="myTopnav"> <!-- Navigeringsbar -->
+                    <a href="index.html" class="active">Hem</a>
+                    <a href="fotografi.html">Fotografi</a>
+                    <a href="hector.html">Hector</a>
+                    <a href="filmtrailer.html">Filmtrailer</a>
+                    <a href="matrecept.html">Mat & Recept</a>
+                    <a href="info.html">Info</a>
+                    <a href="javascript:void(0);"
+                    class="icon"
+                    onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </nav>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myTopnav");
+                        if (x.className === "topnav") {
+                            x.className += " responsive";
+                        } else {
+                            x.className = "topnav";
+                        }
+                    }
+                </script>
+                <aside class="player"><!-- Använt aside som SEMANTISK TAGG för min spelare iFrame skapar en inbäddad spelare, länkad från youtube -->
+                    <iframe 
+                        class="responsive-iframe" 
+                        width=""
+                        height=""
+                        src="https://www.youtube.com/embed/h7N1gsQY4Io?autoplay=1"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </aside>
+                <div class="photo-gallery"> <!-- Galleriet för bilderna under filmspelaren -->
+                    <div class="container">
+                        <div class="intro">
+                            <h2 class="text-center">Filmtrailer</h2>
+                            <p class="text-center">Heat</p>
+                        </div>
+                        <div class="row photos">
+                            <div class="col-sm-6 col-md-4 col-lg-4 item"> <!-- Olika kolumner som ändras beroende på bredden av skärmen, responsiv med bootstrap -->
+                                <a
+                                    href="image/heat transport.jpg"
+                                    data-lightbox="photos"
+                                    ><img
+                                        class="img-fluid"
+                                        src="image/heat transport.jpg"
+                                /></a>
+                                <article>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Odit excepturi fuga totam
+                                    eaque. Aliquam ratione, iusto illo odit, dolorum
+                                    ut a laborum at quibusdam dolore impedit itaque
+                                    expedita facere perspiciatis.
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 item">
+                                <a
+                                    href="image/heat coffe.jpeg"
+                                    data-lightbox="photos"
+                                    ><img
+                                        class="img-fluid"
+                                        src="image/heat coffe.jpeg"
+                                /></a>
+                                <article>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Odit excepturi fuga totam
+                                    eaque. Aliquam ratione, iusto illo odit, dolorum
+                                    ut a laborum at quibusdam dolore impedit itaque
+                                    expedita facere perspiciatis.
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-4 item">
+                                <a
+                                    href="image/heat downtown.jpg"
+                                    data-lightbox="photos"
+                                    ><img
+                                        class="img-fluid"
+                                        src="image/heat downtown.jpg"
+                                /></a>
+                                <article>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Odit excepturi fuga totam
+                                    eaque. Aliquam ratione, iusto illo odit, dolorum
+                                    ut a laborum at quibusdam dolore impedit itaque
+                                    expedita facere perspiciatis.
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="footer-content">
+                        @Copyright - Robert Toth |
+                        <a href="tel:+46736579848" target="_blank">Ring</a> 
+                        <a href="mailto:robert.toth@gritacademy" target="_blank">E-Mail</a>
+                        <a href="https://www.youtube.com/@Robbe1984/videos" target="_blank">Youtube</a>
+                        <a href="https://instagram.com/collectible.photos" target="_blank">Instagram</a>
+                    </div>
+                </footer>
+            </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    </body>
+</html>

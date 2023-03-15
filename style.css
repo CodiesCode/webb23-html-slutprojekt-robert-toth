@@ -1,0 +1,504 @@
+* {
+    /* Universiella värde för body på alla html sidor */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+main {
+    /* Inboxad attributer för alla sidor med bootstrap, hjälper till med att hålla footern på plats */
+    background-color: var(--backgroundcol);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+:root {
+    /* Egna variabler för padding och färger */
+    --custompad: 20px;
+    --cardbackground: #5b5647;
+    --darkmode: #313131;
+    --backgroundcol: #6ab8cd;
+    --darkfontcolor: rgb(216, 216, 216);
+    --darkfilter: brightness(85%);
+    --darkhover: #534f42;
+    --darktopnav: rgb(0, 0, 0);
+}
+
+.column {
+    /* Attributer av mina "Cards" orientering på indexsidan. Flex annvänds och grid (grid är standard) */
+    display: flex;
+    padding: var(--custompad);
+    padding-top: 100px;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 0;
+    margin-right: 0;
+    color: rgb(0, 0, 0);
+}
+
+.card img {
+    /* Bildernas attributer inuti "Cards" elementen  */
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 340px;
+    width: 100%;
+    object-fit: cover;
+}
+@keyframes rotatecards {
+    /* "Cards" keyframes när man landar på sidan första gången */
+    0% {
+        left: 0px;
+        right: 15px;
+    }
+    25% {
+        right: 15px;
+        left: 0px;
+    }
+    50% {
+        left: 0px;
+        right: 15px;
+    }
+    75% {
+        right: 15px;
+        left: 30px;
+    }
+    100% {
+        left: 0px;
+        right: 15px;
+    }
+}
+header h2 {
+    /* Rubriken på indexsidans attributer */
+    text-align: center;
+    padding-top: 5rem;
+    padding-left: var(--custompad);
+    padding-right: var(--custompad);
+}
+header p {
+    /* Subtexten under rubriken på indexsidan */
+    text-align: center;
+    padding-top: var(--custompad);
+    padding-left: var(--custompad);
+    padding-right: var(--custompad);
+}
+.card {
+    /* "Cards" attributer på indexsidan, har även med keyframes animationer på de två sista raderna */
+    border-radius: 10px;
+    padding-top: var(--custompad);
+    width: 300px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+    padding: 8px;
+    text-align: center;
+    position: relative;
+    background: rgb(220, 218, 218);
+    animation-name: rotatecards;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3;
+}
+@media (max-width: 360px) { /* Breakpooint för att hålla korten i rätt aspect ratio i mobil vy */
+    .card {
+        border-radius: 10px;
+        padding-top: var(--custompad);
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+        padding: 8px;
+        text-align: center;
+        position: relative;
+        background: rgb(220, 218, 218);
+        animation-name: rotatecards;
+        animation-duration: 0.5s;
+        animation-iteration-count: 3;
+    }
+}
+
+.article {
+    /* Article används som subtext på alla sidor förutom "fotografi" */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-left: var(--custompad);
+    padding-right: var(--custompad);
+    padding-bottom: 15px;
+}
+.card h2 {
+    /* Rubrikerna på "Cards" på indexsidan */
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card figcaption {
+    /* Subtexten under rubrikerna inuti "Cards" på indexsidan */
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.card-link {
+    /* osynlig "box" ovanför "Cards" gör att man kan trycka på korten för att komma vidare till nästa html */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.card:hover {
+    /* skuggning och transition på "Cards" när man hovrar ovanför */
+    overflow: visible;
+    transform: scale(1.03);
+    box-shadow: 0px 0px 50px 15px #ffffff;
+    filter: contrast(1.15);
+    background-color: #0798b9;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 600px) {
+    /* beteende för "Cards" orientering vid mindre skärm */
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+}
+
+.player {
+    /* Youtube spelarens ramverks position och bildförhållande */
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.responsive-iframe {
+    /* Youtube spelarens attributer samt ljusare filter då videon var för mörk */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(2);
+}
+footer {
+    /* Storlek och färg på footern  */
+    margin-top: auto;
+    padding-top: 50px;
+    padding-bottom: var(--custompad);
+    width: 100%;
+}
+.footer-content {
+    /* Footerns och innehållets attributer */
+
+    flex-direction: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+    font-size: 0.8rem;
+}
+
+a:visited {
+    /* vilka färger hyperlänkarna ska ha vid olika stadier. Tagit bort underline på alla länkar */
+    color: #000000;
+    text-decoration: none;
+}
+a:link {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    color: #ffffff71;
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.photo-gallery {
+    /* Klassen är kopplat till bootstrap och används på alla sidor utom index */
+    color: rgb(0, 0, 0);
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-gallery p {
+    /* Subtexten under alla rubriker på alla sidor  */
+    color: #000000;
+    margin-top: var(--custompad);
+}
+
+.photo-gallery h2 {
+    /* Rubrikens attributer på alla sidor förutom index */
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    color: inherit;
+}
+
+@media (max-width: 650px) {
+    /* Breakpoint för skärmar med 650px och neråt */
+    .photo-gallery article {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        font-size: 12px;
+        margin-right: auto;
+        margin-left: auto;
+        color-scheme: var(--darkmode);
+    }
+}
+
+.photo-gallery img:hover {
+    /* hovereffekt för alla bilder under klassen "photo-gallery" */
+    border-radius: 0px;
+    padding: 5px;
+    background-color: #000000;
+    overflow: visible;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 50px 15px #ffffff;
+    transition: 0.5s;
+}
+
+.photo-gallery .photos {
+    /* bilderas attributer i photo gallery för alla sidor utom index  */
+    margin-top: var(--custompad);
+    padding-bottom: var(--custompad);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.row.photos {
+    /* bootstrap funktioner för rows (bilder och text) */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.img-fluid {
+    /* Klassen för alla bilder inuti rowphotos och deras attributer */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    width: 35em;
+    height: auto;
+    margin-bottom: var(--custompad);
+    box-shadow: 0 6px 8px 0 rgb(0, 0, 0);
+    padding: 8px;
+    text-align: center;
+    background-color: var(--bs-card-bg);
+    background: rgb(218, 216, 216);
+}
+.main-photo img {
+    /* Topp bilden på Hectors sida och dess positionering */
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    height: auto;
+    max-width: 100%;
+}
+
+.main-photo-food img {
+    /* Topp bilden på Mat & Recept sida och dess positionering */
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+picture img {
+    /* Topp bilden på Info-sidan och dess positionering */
+    border-radius: 27px;
+    height: auto;
+    width: 50%;
+    margin-left: 25vw;
+    margin-right: 25vh;
+    padding: var(--custompad);
+    display: block;
+}
+
+picture img:hover {
+    /* Hover effekt för bilden på Info sidan */
+    border-radius: 0px;
+    padding: 3px;
+    background-color: #000000;
+    overflow: visible;
+    transform: scale(1.02);
+    box-shadow: 0px 0px 10px 10px #ffffff;
+    transition: 0.8s;
+}
+@media (max-width: 767px) {
+  /* Breakpoint för font-size och padding på alla sidor förutom indexsidan för mobilvy */
+  .container article{
+      margin-bottom: 25px;
+      padding-top: 25px;
+      font-size: 16px;
+      margin-right: auto;
+      margin-left: auto;
+      color-scheme: var(--darkmode);
+  }
+}
+@media (max-width: 650px) {
+    /* Breakpoint för font-size och padding på alla sidor förutom indexsidan för mobilvy */
+    .container article{
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        color-scheme: var(--darkmode);
+    }
+}
+
+@media (max-width: 280px) {
+    /* Andra Breakpoint för font-size och padding för Samsung flip (sidor för smala enheter)*/
+    .container {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 12px;
+        margin-right: auto;
+        margin-left: auto;
+        color-scheme: var(--darkmode);
+    }
+}
+
+.container h2 {
+    /*Attributer för Rubriker inne på alla sidor utom index */
+    padding-top: 4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+
+.topnav {
+    /* Färgen på navbar */
+    background-color: #333;
+}
+
+.topnav a {
+    /* Attributer för Texten i navbar samt position för "home" */
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: right;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    /* hovereffekt för knapparna på navbar */
+    background-color: var(--backgroundcol);
+    transition: 0.3s;
+}
+
+.topnav .icon {
+    /* Ikon som enbart ska synas i mobilvy på navbar */
+    display: none;
+}
+
+.topnav .icon:hover {
+    /* Hovereffekt för ikonen på navbar i mobilvy */
+    transform: rotateZ(180deg);
+    transition: 0.35s;
+    background-color: rgba(220, 220, 31, 0);
+}
+
+@media screen and (max-width: 650px) {
+    /* Animation för navbarikonen och position när man landar på hemsidan. Gömmer de andra knapparna i menyn  */
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* Clickable knapp (Ikonen) på navbaren i mobilvy */
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 0.5s;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: center;
+        transition: 0.5s;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Dark-mode attributer */
+    main {
+        background-color: var(--darkmode);
+    }
+    p {
+        color: var(--darkfontcolor);
+    }
+    h2 {
+        color: var(--darkfontcolor);
+    }
+    article {
+        color: var(--darkfontcolor);
+    }
+    figcaption {
+        color: var(--darkfontcolor);
+    }
+    .footer-content a:hover {
+        color: rgba(214, 125, 36, 0.769);
+    }
+    .footer-content {
+        color: var(--darkfontcolor);
+    }
+    .footer-content a {
+        color: var(--darkfontcolor);
+    }
+    p.text-center {
+        color: var(--darkfontcolor);
+    }
+    .container h2 {
+        color: var(--darkfontcolor);
+    }
+    img {
+        filter: var(--darkfilter); /* Mörkt filter på alla bilder */
+    }
+    .card {
+        background: var(--cardbackground);
+    }
+    .topnav a:hover {
+        background-color: var(--darkmode);
+    }
+    .card:hover {
+        background-color: var(--darkhover);
+    }
+    .topnav {
+        background-color: black;
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/> <!-- javascript för navbar -->
+        <link rel="stylesheet" href="style.css" />
+            <title>Robert Toth</title>
+    </head>
+    <body>
+       <main><!-- Då bootstrap kör över body i CSS har jag lagt in en egen "body" och döpt om den till main. SEMANTISK TAGG  -->
+            <nav class="topnav" id="myTopnav"> <!-- Navigeringsbar SEMANTISK TAGG -->
+                <a href="index.html" class="active">Hem</a>
+                <a href="fotografi.html">Fotografi</a>
+                <a href="hector.html">Hector</a>
+                <a href="filmtrailer.html">Filmtrailer</a>
+                <a href="matrecept.html">Mat & Recept</a>
+                <a href="info.html">Info</a>
+                <a href="javascript:void(0);"
+                class="icon"
+                onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </nav>
+                <script>
+                    function myFunction() { /* Javascript för navbar både i desktopvy och hamburgermeny */
+                        var x = document.getElementById("myTopnav");
+                        if (x.className === "topnav") {
+                            x.className += " responsive";
+                        } else {
+                            x.className = "topnav";
+                        }
+                    }
+                </script>
+                <header><!-- SEMANTISK TAGG -->
+                <h2>
+                    Här är några av mina projekt jag har jobbat på genom åren
+                </h2>
+                <p>
+                    Detta är fyra ämne som står mig nära hjärtat och jag hoppas
+                    att du tycker om dem lika mycket som jag själv gör!
+                </p>
+            </header>
+            <div class="row"> <!-- Har byggt tre klasser för att kunna göra "Cards". Denna styr hela boxen -->
+                <div class="column"> <!-- Flexbox med grid orientering -->
+                    <div class="card"> <!-- Själva kortens innehåll -->
+                        <img src="image/heat.jpg" />
+                        <a href="filmtrailer.html" class="card-link"></a>
+                        <h2>Filmtrailer</h2>
+                        <figcaption>
+                          Anses vara en av världens bästa film genom tiderna 
+                          och banade väg för många "heist" filmer. 
+                        </figcaption> <!-- Använder figcaption för texten i "Card". SEMANTISK TAG --> 
+                    </div>
+                    <div class="card">
+                        <img src="image/IMG_20230308_171150_539.JPG" />
+                        <a href="fotografi.html" class="card-link"></a>
+                        <h2>Fotografi</h2>
+                        <figcaption>
+                            Fördjupa er i Roberts värld av fotografi
+                        </figcaption>
+                    </div>
+                    <div class="card">
+                        <img src="image/IMG_0506-2.jpg" />
+                        <a href="hector.html" class="card-link"></a>
+                        <h2>Hector</h2>
+                        <figcaption>
+                            Denna lilla pojke kan vara jordens åttånde
+                            underverk. Klicka på bilden för att själv få avgöra!
+                        </figcaption>
+                    </div>
+                    <div class="card">
+                        <img src="image/02-creative-color.jpg" />
+                        <a href="matrecept.html" class="card-link"></a>
+                        <h2>Mat & Recept</h2>
+                        <figcaption>Mat? Recept? Ja tack!</figcaption>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-content"><!-- Footerns innehåll SEMANTISK TAGG -->
+                    @Copyright - Robert Toth |
+                    <a href="tel:+46736579848" target="_blank">Ring</a> 
+                    <a href="mailto:robert.toth@gritacademy" target="_blank">E-Mail</a>
+                    <a href="https://www.youtube.com/@Robbe1984/videos" target="_blank">Youtube</a>
+                    <a href="https://instagram.com/collectible.photos" target="_blank">Instagram</a>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>

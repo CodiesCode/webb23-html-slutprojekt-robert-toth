@@ -1,13 +1,14 @@
 * {
-    /* Universiella värde för body på alla html sidor */
+    /* Universiella värde för alla html sidor */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
-}
+    }
 main {
     /* Inboxad attributer för alla sidor med bootstrap, hjälper till med att hålla footern på plats */
+   
     background-color: var(--backgroundcol);
     min-height: 100vh;
     display: flex;
@@ -101,6 +102,7 @@ header p {
     animation-name: rotatecards;
     animation-duration: 0.5s;
     animation-iteration-count: 3;
+    transition:all 0.5s ease-out;
 }
 @media (max-width: 360px) { /* Breakpooint för att hålla korten i rätt aspect ratio i mobil vy */
     .card {
@@ -158,11 +160,11 @@ header p {
 .card:hover {
     /* skuggning och transition på "Cards" när man hovrar ovanför */
     overflow: visible;
-    transform: scale(1.03);
     box-shadow: 0px 0px 50px 15px #ffffff;
     filter: contrast(1.15);
     background-color: #0798b9;
-    transition: 0.5s;
+    transform: scale(1.03);
+    z-index: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -211,7 +213,7 @@ footer {
     justify-content: center;
     text-align: center;
     color: #000000;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 a:visited {
@@ -242,6 +244,14 @@ a:hover {
     margin-right: auto;
 }
 
+.photo-gallery img{
+    /* Klassen är kopplat till bootstrap och används på alla sidor utom index */
+    color: rgb(0, 0, 0);
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    transition:all 0.5s ease-out;
+}
 .photo-gallery p {
     /* Subtexten under alla rubriker på alla sidor  */
     color: #000000;
@@ -276,7 +286,7 @@ a:hover {
     overflow: visible;
     transform: scale(1.05);
     box-shadow: 0px 0px 50px 15px #ffffff;
-    transition: 0.5s;
+    z-index: 1;
 }
 
 .photo-gallery .photos {
@@ -304,7 +314,6 @@ a:hover {
     box-shadow: 0 6px 8px 0 rgb(0, 0, 0);
     padding: 8px;
     text-align: center;
-    background-color: var(--bs-card-bg);
     background: rgb(218, 216, 216);
 }
 .main-photo img {
@@ -334,6 +343,7 @@ picture img {
     margin-right: 25vh;
     padding: var(--custompad);
     display: block;
+    transition:all 0.5s ease-out;
 }
 
 picture img:hover {
@@ -342,12 +352,12 @@ picture img:hover {
     padding: 3px;
     background-color: #000000;
     overflow: visible;
-    transform: scale(1.02);
+    transform: scale(1.01);
     box-shadow: 0px 0px 10px 10px #ffffff;
-    transition: 0.8s;
+    z-index: 1;
 }
 @media (max-width: 767px) {
-  /* Breakpoint för font-size och padding på alla sidor förutom indexsidan för mobilvy */
+  /* Breakpoint för font-size på alla sidor förutom indexsidan för mobilvy */
   .container article{
       margin-bottom: 25px;
       padding-top: 25px;
